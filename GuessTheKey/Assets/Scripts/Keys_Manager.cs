@@ -12,9 +12,8 @@ public class Keys_Manager : MonoBehaviour
     [SerializeField] KeyCode[] keys;
     KeyCode choosenKey;
 
-    [SerializeField] Camera_ScreenShake shake1;
-    [SerializeField] Camera_ScreenShake shake2;
-    [SerializeField] Camera_ScreenShake shake3;
+    [SerializeField] UI_Shake shake1;
+    [SerializeField] UI_Shake shake3;
 
     [SerializeField] AudioSource ohNo;
     [SerializeField] AudioSource goodTo;
@@ -57,13 +56,12 @@ public class Keys_Manager : MonoBehaviour
             Invoke(nameof(StartScreenShake), 3.25f);
             ohNo.Stop();
             goodTo.Play();
-            shake3.EmpezarSacudirPantalla();        
+            shake3.StartShake();        
         }
         else
         {
             texto.fontSize = 45;
             goodTo.Stop();
-            shake2.EmpezarSacudirPantalla();
             ohNo.Play();
             texto.text = "No estaba pensando la tecla     '" + pressedKey + "' vuelve a intentarlo";
             ChangeUIsColor(Color.red);
@@ -78,9 +76,9 @@ public class Keys_Manager : MonoBehaviour
 
     void StartScreenShake()
     {
-            texto.fontSize = 90;
-            texto.text = "¡" + choosenKey + "! ¡¡YESSS!!";
-            ChangeUIsColor(greenColor);
-        shake1.EmpezarSacudirPantalla();
+        texto.fontSize = 90;
+        texto.text = "¡" + choosenKey + "! ¡¡YESSS!!";
+        ChangeUIsColor(greenColor);
+        shake1.StartShake();
     }
 }
