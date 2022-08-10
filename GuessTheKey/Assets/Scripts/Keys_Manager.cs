@@ -12,6 +12,14 @@ public class Keys_Manager : MonoBehaviour
     [SerializeField] KeyCode[] keys;
     KeyCode choosenKey;
 
+    [SerializeField] Camera_ScreenShake shake1;
+    [SerializeField] Camera_ScreenShake shake2;
+    [SerializeField] Camera_ScreenShake shake3;
+
+    [SerializeField] AudioSource ohNo;
+    [SerializeField] AudioSource goodTo;
+
+
     void Start()
     {
         SetChoosenKey();
@@ -19,7 +27,10 @@ public class Keys_Manager : MonoBehaviour
 
     void Update()
     {
-        GetKeysDown();
+        if(goodTo.isPlaying == false)
+        {
+            GetKeysDown();
+        }
     }
 
     void SetChoosenKey()
@@ -43,12 +54,18 @@ public class Keys_Manager : MonoBehaviour
     {
         if(pressedKey == choosenKey)
         {
-            texto.text = "¡Así es! Estaba pensando           en la tecla: '" + pressedKey + "'";
-            ChangeUIsColor(greenColor);
+            Invoke(nameof(StartScreenShake), 3.25f);
+            ohNo.Stop();
+            goodTo.Play();
+            shake3.EmpezarSacudirPantalla();        
         }
         else
         {
-            texto.text = "No estaba pensando la tecla '" + pressedKey + "' vuelve a intentarlo";
+            texto.fontSize = 45;
+            goodTo.Stop();
+            shake2.EmpezarSacudirPantalla();
+            ohNo.Play();
+            texto.text = "No estaba pensando la tecla     '" + pressedKey + "' vuelve a intentarlo";
             ChangeUIsColor(Color.red);
         }
     }
@@ -59,4 +76,11 @@ public class Keys_Manager : MonoBehaviour
         texto.color = newColor;
     }
 
+    void StartScreenShake()
+    {
+            texto.fontSize = 90;
+            texto.text = "Â¡" + choosenKey + "! Â¡Â¡YESSS!!";
+            ChangeUIsColor(greenColor);
+        shake1.EmpezarSacudirPantalla();
+    }
 }
