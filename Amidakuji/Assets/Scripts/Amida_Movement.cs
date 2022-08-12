@@ -8,16 +8,22 @@ public class Amida_Movement : MonoBehaviour
     bool isChanging;
     Rigidbody2D rb;
     Quaternion startRotation;
+    bool canMove;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         startRotation = transform.rotation;
         isChanging = false;
+        canMove = false;
     }
 
     void FixedUpdate()
     {
+        if(canMove == false)
+        {
+            return;
+        }
         rb.velocity = (transform.up * speed * Time.fixedDeltaTime * 10);
     }
 
