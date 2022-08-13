@@ -5,7 +5,6 @@ using UnityEngine;
 public class Timer_ : MonoBehaviour
 {
     [SerializeField] float Timer;
-    [SerializeField] float duration;
     [SerializeField] GameObject[] stalactites;
     float staCount;
 
@@ -20,7 +19,7 @@ public class Timer_ : MonoBehaviour
         int a = 0;
         while (Timer >= 0f)
         {
-            Timer -= Time.deltaTime * duration;
+            Timer -= Time.deltaTime;
             if(staCount >= Timer)
             {
                 staCount -= 5;
