@@ -1,20 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Collisions : MonoBehaviour
 {
-    [SerializeField] int newVariable;
-
-
-    void Start()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if(collision.gameObject.CompareTag("Knife"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
 }
