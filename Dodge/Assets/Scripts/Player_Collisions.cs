@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Player_Collisions : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Knife"))
+        if (collision.gameObject.CompareTag("Knife"))
         {
             SceneManager.LoadScene(0);
         }
     }
-
 }
