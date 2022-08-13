@@ -8,7 +8,7 @@ public class Amida_Movement : MonoBehaviour
     bool isChanging;
     Rigidbody2D rb;
     Quaternion startRotation;
-    bool canMove;
+    public bool canMove;
 
     void Start()
     {

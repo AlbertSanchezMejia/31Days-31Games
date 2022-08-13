@@ -7,7 +7,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] float adding;
     [SerializeField] float maxRight;
     [SerializeField] float maxLeft;
-    bool canMove;
+    public bool canMove;
 
     void Start()
     {
