@@ -5,30 +5,38 @@ using UnityEngine;
 public class Spawn_ : MonoBehaviour
 {
     [SerializeField] float delaySpawn;
+    [SerializeField] float delayPlayer;
     [SerializeField] float spaceSpawn;
     [SerializeField] Rigidbody2D prefab;
-    [SerializeField] float gravityValue;
-    Vector2 positionSpawn;
+    Transform target;
 
     void Start()
     {
-        positionSpawn.y = transform.position.y;
-        Invoke(nameof(StartSpawn), delaySpawn);
-    }
-
-    void StartSpawn()
-    {
-        SpawnObjects();
-        Invoke(nameof(StartSpawn), delaySpawn);
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        Invoke(nameof(SpawnObjects), delaySpawn);
+        Invoke(nameof(SpawnToPlayer), delayPlayer);
     }
 
     void SpawnObjects()
     {
-        positionSpawn.x = Random.Range(-spaceSpawn, spaceSpawn);
-    
-        Rigidbody2D knifeInstance;
-        knifeInstance = Instantiate(prefab, positionSpawn, transform.rotation);
-        knifeInstance.gravityScale = gravityValue;
+        Instantiatee(Random.Range(-spaceSpawn, spaceSpawn));
+        Invoke(nameof(SpawnObjects), delaySpawn);
     }
 
+    void SpawnToPlayer()
+    {
+        Instantiatee(target.position.x);
+        Invoke(nameof(SpawnToPlayer), delayPlayer);
+    }
+
+    void Instantiatee(float xPos)
+    {
+        Rigidbody2D knifeInstance;
+        knifeInstance = Instantiate(prefab, new Vector2(xPos, transform.position.y), transform.rotation);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
 }

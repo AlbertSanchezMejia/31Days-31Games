@@ -6,12 +6,9 @@ public class Hazards_Collisions : MonoBehaviour
 {
     [SerializeField] float destroyTime;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void Start()
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Destroy(gameObject, destroyTime);
-        }
+        Destroy(gameObject, destroyTime);
     }
 
 }
