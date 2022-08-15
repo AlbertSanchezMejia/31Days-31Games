@@ -5,6 +5,9 @@ using UnityEngine;
 public class Player_ChangeColor : MonoBehaviour
 {
     [SerializeField] Material winnerColor;
+    [SerializeField] GameObject winImage;
+    [SerializeField] GameObject winLose;
+    [SerializeField] AudioSource sfx;
     MeshRenderer mesh;
 
     void Start()
@@ -24,6 +27,7 @@ public class Player_ChangeColor : MonoBehaviour
     {
         if (mesh.material.color == changer.wantedMaterial.color)
         {
+            sfx.Play();
             mesh.material = changer.mesh.material;
             changer.ChangeColor();
         }
@@ -34,7 +38,8 @@ public class Player_ChangeColor : MonoBehaviour
     {
         if(mesh.material.color == winnerColor.color)
         {
-            Debug.Log("Ganaste el juego");
+            winLose.SetActive(false);
+            winImage.SetActive(true);
         }
     }
 

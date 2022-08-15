@@ -5,7 +5,10 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     [SerializeField] float moveDis;
+    [SerializeField] float speed;
     Rigidbody rb;
+    float xMov;
+    float zMov;
 
     void Start()
     {
@@ -14,6 +17,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             MovePosition(Vector3.forward * moveDis);
@@ -32,12 +36,14 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             MovePosition(-Vector3.right * moveDis);
-        }
+        }*/
+        xMov = Input.GetAxisRaw("Horizontal");
+        zMov = Input.GetAxisRaw("Vertical");
     }
 
     void MovePosition(Vector3 direction)
     {
-        rb.MovePosition(transform.position + direction);
+        rb.velocity = (new Vector3(xMov, rb.velocity.y, zMov) * speed * Time.fixedDeltaTime * 10);
     }
 
 }
