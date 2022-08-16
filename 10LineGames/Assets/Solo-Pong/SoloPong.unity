@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -259,8 +259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6a61c90dc44754dbe52d7aacd94203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpeed: 7
-  rb: {fileID: 256627661}
 --- !u!1 &348516645
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,8 +828,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a53d9cdddb07c2439fe91916650b053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 948364722}
-  speed: 35
+  playerRb: {fileID: 948364722}
+  ballRb: {fileID: 256627661}
 --- !u!1 &1082239383
 GameObject:
   m_ObjectHideFlags: 0
