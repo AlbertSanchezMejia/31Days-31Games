@@ -8,29 +8,29 @@ public class Text_Write : MonoBehaviour
     [SerializeField] string frase;
     [SerializeField] Text texto;
     [SerializeField] float delayText = 0.1f;
-    bool isRunning;
+    bool isWriting;
 
     void Start()
     {
-        StartCoroutine(Reloj());
+        StartCoroutine(WriteText(frase));
     }
 
-    IEnumerator Reloj()
+    IEnumerator WriteText(string sentence)
     {
-        isRunning = true;
+        isWriting = true;
         texto.text = "";
 
-        foreach (char letra in frase)
+        foreach (char letra in sentence)
         {
             texto.text = texto.text + letra;
             yield return new WaitForSeconds(delayText);
         }
-        isRunning = false;
+        isWriting = false;
     }
 
-    private void Update()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isRunning)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && isWriting)
         {
             StopAllCoroutines();
             texto.text = frase;
