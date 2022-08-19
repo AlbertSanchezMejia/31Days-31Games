@@ -8,6 +8,8 @@ public class Timer_ : MonoBehaviour
     [SerializeField] GameObject[] stalactites;
     float staCount;
 
+    [SerializeField] Scene_Change changer;
+
     void Start()
     {
         staCount = Timer - 5f;
@@ -28,6 +30,7 @@ public class Timer_ : MonoBehaviour
             }
             yield return null;
         }
+        yield return new WaitForSeconds(2f);
+        changer.StartBlack();
     }
-
 }

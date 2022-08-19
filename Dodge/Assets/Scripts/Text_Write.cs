@@ -8,9 +8,9 @@ public class Text_Write : MonoBehaviour
     [SerializeField] Text texto;
     [SerializeField] GameObject arrowImage;
     [SerializeField] float delayText = 0.1f;
-    [TextArea][SerializeField] string[] sentences;
+    public string[] sentences;
+    [HideInInspector] public int countText;
     bool isWriting;
-    int countText;
 
     void Start()
     {
