@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2ef4f66f545cd7c43b7b2f0082ac6991
+guid: 8e2bb202f3ecf42468d479fafd6db1bc
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Evogria
+  - Gobold
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

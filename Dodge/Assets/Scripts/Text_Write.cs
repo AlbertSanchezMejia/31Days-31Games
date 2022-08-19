@@ -5,19 +5,22 @@ using UnityEngine.UI;
 
 public class Text_Write : MonoBehaviour
 {
-    [SerializeField] string frase;
     [SerializeField] Text texto;
+    [SerializeField] GameObject arrowImage;
     [SerializeField] float delayText = 0.1f;
+    [TextArea][SerializeField] string[] sentences;
     bool isWriting;
+    int countText;
 
     void Start()
     {
-        StartCoroutine(WriteText(frase));
+        StartCoroutine(WriteText(sentences[countText]));
     }
 
     IEnumerator WriteText(string sentence)
     {
         isWriting = true;
+        arrowImage.SetActive(!isWriting);
         texto.text = "";
 
         foreach (char letra in sentence)
@@ -25,16 +28,36 @@ public class Text_Write : MonoBehaviour
             texto.text = texto.text + letra;
             yield return new WaitForSeconds(delayText);
         }
-        isWriting = false;
+        PrepareNextText();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && isWriting)
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-            StopAllCoroutines();
-            texto.text = frase;
+            CheckTexts();
         }
     }
 
+    void CheckTexts()
+    {
+        if (isWriting)
+        {
+            StopAllCoroutines();
+            texto.text = sentences[countText];
+            PrepareNextText();
+            return;
+        }
+
+        if(countText < sentences.Length)
+        {
+            StartCoroutine(WriteText(sentences[countText]));
+        }
+    }
+    void PrepareNextText()
+    {
+        isWriting = false;
+        arrowImage.SetActive(!isWriting);
+        countText++;
+    }
 }
