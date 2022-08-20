@@ -30,7 +30,7 @@ public class Timer_ : MonoBehaviour
             }
             yield return null;
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         changer.StartBlack();
     }
 }

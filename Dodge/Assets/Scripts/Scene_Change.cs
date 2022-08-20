@@ -12,7 +12,7 @@ public class Scene_Change : MonoBehaviour
     [SerializeField] Text_Write writer;
 
     [Header("BlackScreen")]
-    [SerializeField] float delayTime;
+    //[SerializeField] float delayTime;
     [SerializeField] Image blackScreen;
     [SerializeField] float[] alphavalues;
     Color theColor;
@@ -25,7 +25,7 @@ public class Scene_Change : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().buildIndex != 2)
+        if (Input.GetKeyDown(KeyCode.Space) && SceneManager.GetActiveScene().buildIndex == 1)
         {
             StartCoro();
         }
@@ -53,7 +53,7 @@ public class Scene_Change : MonoBehaviour
             theColor.a = alphavalues[a];
             blackScreen.color = theColor;
             a++;
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(0.1f);
         }
 
         ChangeScene();

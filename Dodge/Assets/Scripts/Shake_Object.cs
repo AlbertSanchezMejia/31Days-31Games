@@ -5,15 +5,18 @@ using UnityEngine;
 public class Shake_Object : MonoBehaviour
 {
     [SerializeField] Transform objectToShake;
-    [SerializeField] float shakeTime;
-    [SerializeField] float shakeDistance = 0.25f;
+    public float shakeTime;
+    public float shakeDistance = 0.25f;
     Vector3 startPosition;
-    bool canShake;
+    [SerializeField] bool canShake;
 
     void Start()
     {
         startPosition = objectToShake.localPosition;
-        canShake = false;
+        if (canShake)
+        {
+            ShakeTheObject();
+        }
     }
 
     void Update()

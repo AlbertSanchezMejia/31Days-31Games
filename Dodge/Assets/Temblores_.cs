@@ -14,7 +14,6 @@ public class Temblores_ : MonoBehaviour
 
     [SerializeField] bool canDo = true;
     [SerializeField] bool changeText = true;
-    [SerializeField] bool startShake = false;
 
     void Update()
     {
@@ -23,22 +22,17 @@ public class Temblores_ : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (writer.countText >= writer.sentences.Length)
         {
-            if (writer.countText >= writer.sentences.Length && startShake)
-            {
-                arrowText.SetActive(false);
-                StartCoroutine(ShakeCutscene());
-                canDo = false;
-            }
-            else
-            {
-                startShake = true;
-            }
+            arrowText.SetActive(false);
+            StartCoroutine(ShakeCutscene());
+            canDo = false;
         }
     }
+
     IEnumerator ShakeCutscene()
     {
+        yield return new WaitForSeconds(0.5f);
         shaker.StartShake();
         if(changeText == true)
         {
@@ -48,9 +42,8 @@ public class Temblores_ : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         shaker.StartShake();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         enemies.SetActive(true);
-        yield return new WaitForSeconds(1f);
         secondText.SetActive(true);
         StartCoroutine(ShakeCutscene());
 
