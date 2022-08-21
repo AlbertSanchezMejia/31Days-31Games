@@ -9,7 +9,7 @@ public class Text_Write : MonoBehaviour
     [SerializeField] GameObject arrowImage;
     [SerializeField] float delayText = 0.1f;
     public string[] sentences;
-    [HideInInspector] public int countText;
+    public int countText;
     bool isWriting;
 
     void Start()
@@ -31,7 +31,7 @@ public class Text_Write : MonoBehaviour
         PrepareNextText();
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
