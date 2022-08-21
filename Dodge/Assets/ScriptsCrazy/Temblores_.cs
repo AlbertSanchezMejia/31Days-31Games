@@ -11,6 +11,7 @@ public class Temblores_ : MonoBehaviour
     [SerializeField] GameObject secondText;
     [SerializeField] GameObject arrowText;
     [SerializeField] GameObject enemies;
+    [SerializeField] AudioSource caveShake;
 
     [SerializeField] bool canDo = true;
     [SerializeField] bool changeText = true;
@@ -33,19 +34,25 @@ public class Temblores_ : MonoBehaviour
     IEnumerator ShakeCutscene()
     {
         yield return new WaitForSeconds(0.5f);
-        shaker.StartShake();
-        if(changeText == true)
+        ShakeCave();
+        if (changeText == true)
         {
             yield return new WaitForSeconds(1f);
             texto.text = "!";
             changeText = false;
         }
         yield return new WaitForSeconds(1f);
-        shaker.StartShake();
+        ShakeCave();
         yield return new WaitForSeconds(0.5f);
         enemies.SetActive(true);
         secondText.SetActive(true);
         StartCoroutine(ShakeCutscene());
-
     }
+
+    void ShakeCave()
+    {
+        shaker.StartShake();
+        caveShake.Play();
+    }
+
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Text_Write : MonoBehaviour
 {
+    [SerializeField] AudioSource soundText;
+    [SerializeField] AudioSource soundSkip;
     [SerializeField] Text texto;
     [SerializeField] GameObject arrowImage;
     [SerializeField] float delayText = 0.1f;
@@ -19,6 +21,7 @@ public class Text_Write : MonoBehaviour
 
     IEnumerator WriteText(string sentence)
     {
+        soundText.Play();
         isWriting = true;
         arrowImage.SetActive(!isWriting);
         texto.text = "";
@@ -43,19 +46,20 @@ public class Text_Write : MonoBehaviour
     {
         if (isWriting)
         {
+            soundSkip.Play();
             StopAllCoroutines();
             texto.text = sentences[countText];
             PrepareNextText();
-            return;
         }
-
-        if(countText < sentences.Length)
+        else if(countText < sentences.Length)
         {
             StartCoroutine(WriteText(sentences[countText]));
         }
     }
+
     void PrepareNextText()
     {
+        soundText.Pause();
         isWriting = false;
         arrowImage.SetActive(!isWriting);
         countText++;
