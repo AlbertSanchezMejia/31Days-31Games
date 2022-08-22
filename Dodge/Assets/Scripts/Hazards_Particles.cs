@@ -11,7 +11,7 @@ public class Hazards_Particles : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HazardSound"))
         {
-            Instantiate(particles, transform.position, particles.rotation);
+            Instantiate(particles, new Vector2(transform.position.x, transform.position.y + 0.1f), particles.rotation);
         }
     }
 

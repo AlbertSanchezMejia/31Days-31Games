@@ -707,16 +707,17 @@ MonoBehaviour:
   soundSkip: {fileID: 900128734}
   texto: {fileID: 293423688}
   arrowImage: {fileID: 23036907}
-  delayText: 0.1
+  delayText: 0.07
   sentences:
   - "\xBFEsto es...?"
   - "\xA1La cueva se derrumba!"
   - "\xBFFueron mis gritos?"
-  - Pero....
+  - Pero...
   - No tengo fuerzas para moverme.
   - "Por favor ay\xFAdame."
   - "Quiero volver a ver la luz del d\xEDa."
-  - "Ay\xFAdame a esquivar las estal\xE1ctitas que caen del techo."
+  - "Empezar\xE1n a caer estalatitas del techo."
+  - "Ay\xFAdame a esquivarlas."
   countText: 0
 --- !u!1 &206973917
 GameObject:
@@ -1227,7 +1228,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 91760d172caa42849b4b44a83a2130df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1755,7 +1756,7 @@ MonoBehaviour:
   soundSkip: {fileID: 900128734}
   texto: {fileID: 293423688}
   arrowImage: {fileID: 23036907}
-  delayText: 0.09
+  delayText: 0.07
   sentences:
   - ......
   - "\xBFCu\xE1ntos d\xEDas...?"
@@ -3656,7 +3657,6 @@ MonoBehaviour:
   enemies: {fileID: 1195912967}
   caveShake: {fileID: 142735964}
   canDo: 1
-  changeText: 1
 --- !u!4 &1997098578
 Transform:
   m_ObjectHideFlags: 0

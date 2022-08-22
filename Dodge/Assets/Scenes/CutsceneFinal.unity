@@ -253,7 +253,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &18394531
 GameObject:
@@ -788,17 +788,17 @@ MonoBehaviour:
   soundSkip: {fileID: 765284802}
   texto: {fileID: 1036799984}
   arrowImage: {fileID: 1660805483}
-  delayText: 0.1
+  delayText: 0.075
   sentences:
   - Esa...
   - Es la salida.
   - "\xA1Lo logramos!"
-  - "La luz\u2026"
-  - "Es tan brillante\u2026"
-  - "Tan blanca\u2026"
+  - La luz...
+  - Es tan brillante...
+  - Tan blanca...
+  - Ahora soy libre.
   - Todo te lo debo a ti.
   - Muchas gracias.
-  - Ahora soy libre.
   - Nos vemos.
   countText: 0
 --- !u!4 &262838772
@@ -814,7 +814,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268415881
 GameObject:
@@ -2294,6 +2294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f8f19695ce7164b87bb5fec291da1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  writer: {fileID: 1523901858}
   texto: {fileID: 1036799984}
   shaker: {fileID: 14288065}
   animator: {fileID: 1231045053}
@@ -2317,7 +2318,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1052435475
 MonoBehaviour:
@@ -2757,9 +2758,11 @@ MonoBehaviour:
   soundSkip: {fileID: 765284802}
   texto: {fileID: 1036799984}
   arrowImage: {fileID: 1660805483}
-  delayText: 0.1
+  delayText: 0.075
   sentences:
   - "Por fin ces\xF3."
+  - Estoy a salvo.
+  - Gracias.
   countText: 0
 --- !u!4 &1523901859
 Transform:
@@ -2904,7 +2907,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 91760d172caa42849b4b44a83a2130df, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0

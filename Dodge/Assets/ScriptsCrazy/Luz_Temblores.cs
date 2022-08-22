@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Luz_Temblores : MonoBehaviour
 {
+    [SerializeField] Text_Write writer;
     [SerializeField] Text texto;
     [SerializeField] Shake_Object shaker;
     [SerializeField] Animator animator;
@@ -19,12 +20,15 @@ public class Luz_Temblores : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (writer.countText >= writer.sentences.Length)
         {
-            if(canStart == false) { return; }
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+            {
+                if (canStart == false) { return; }
 
-            canStart = false;
-            StartCoroutine(FinalCutscene());
+                canStart = false;
+                StartCoroutine(FinalCutscene());
+            }
         }
     }
 
