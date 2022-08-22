@@ -8,7 +8,7 @@ public class Shake_Object : MonoBehaviour
     public float shakeTime;
     public float shakeDistance = 0.25f;
     Vector3 startPosition;
-    [SerializeField] bool canShake;
+    public bool canShake;
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class Shake_Object : MonoBehaviour
         Invoke(nameof(ObjectBackToNormal), shakeTime);
     }
 
-    void ObjectBackToNormal()
+    public void ObjectBackToNormal()
     {
         canShake = false;
         objectToShake.localPosition = startPosition;
