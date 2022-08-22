@@ -14,7 +14,6 @@ public class Temblores_ : MonoBehaviour
     [SerializeField] AudioSource caveShake;
 
     [SerializeField] bool canDo = true;
-    [SerializeField] bool changeText = true;
 
     void Update()
     {
@@ -35,18 +34,18 @@ public class Temblores_ : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         ShakeCave();
-        if (changeText == true)
-        {
-            yield return new WaitForSeconds(1f);
-            texto.text = "!";
-            changeText = false;
-        }
+
+        yield return new WaitForSeconds(1f);
+        texto.text = "!";
+
         yield return new WaitForSeconds(1f);
         ShakeCave();
-        yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(1f);
         enemies.SetActive(true);
         secondText.SetActive(true);
-        StartCoroutine(ShakeCutscene());
+
+        InvokeRepeating(nameof(ShakeCave), 2.5f, 2.5f);
     }
 
     void ShakeCave()

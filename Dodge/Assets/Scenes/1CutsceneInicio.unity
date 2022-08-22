@@ -703,8 +703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce63e56f3566b7449645b7ce3282230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundText: {fileID: 0}
-  soundSkip: {fileID: 0}
+  soundText: {fileID: 679063753}
+  soundSkip: {fileID: 900128734}
   texto: {fileID: 293423688}
   arrowImage: {fileID: 23036907}
   delayText: 0.1

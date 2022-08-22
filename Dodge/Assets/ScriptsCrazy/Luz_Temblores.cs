@@ -13,6 +13,9 @@ public class Luz_Temblores : MonoBehaviour
     [SerializeField] GameObject finalText;
     [SerializeField] Image whiteScreen;
     [SerializeField] Color transparentWhite;
+    [SerializeField] AudioSource caveShake;
+    [SerializeField] AudioSource caveLight;
+    [SerializeField] AudioSource caveAmbiental;
 
     void Update()
     {
@@ -28,24 +31,37 @@ public class Luz_Temblores : MonoBehaviour
     IEnumerator FinalCutscene()
     {
         shaker.StartShake();
+        caveShake.Play();
+
         yield return new WaitForSeconds(1f);
         texto.text = "!";
+
         yield return new WaitForSeconds(1f);
         shaker.shakeDistance = 0.4f;
         shaker.StartShake();
+        caveShake.Play();
+
         yield return new WaitForSeconds(1f);
         texto.text = "¿Otro Derrumbe?";
+
         yield return new WaitForSeconds(0.5f);
         shaker.shakeTime = 1.8f;
         shaker.shakeDistance = 0.6f;
         shaker.StartShake();
+        caveAmbiental.Stop();
+        caveLight.Play();
         animator.Play("theLight");
+
         yield return new WaitForSeconds(0.5f);
         whiteScreen.color = transparentWhite;
+
         yield return new WaitForSeconds(1f);
         shaker.shakeDistance = 0.25f;
+
         yield return new WaitForSeconds(0.6f);
         finalText.SetActive(true);
     }
+
+
 
 }
