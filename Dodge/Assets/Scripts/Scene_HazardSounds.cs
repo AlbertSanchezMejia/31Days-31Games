@@ -5,22 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Scene_HazardSounds : MonoBehaviour
 {
-    [SerializeField] AudioSource stalactites1;
-    [SerializeField] AudioSource stalactites2;
+    [SerializeField] AudioSource sfxStalactites1;
+    [SerializeField] AudioSource sfxStalactites2;
+    bool shouldPlay1;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Knife"))
+        if (collision.gameObject.CompareTag("Stalactites"))
         {
-            if(stalactites1.isPlaying == false)
-            {
-                stalactites1.Play();
-            }
-            else
-            {
-                stalactites2.Play();
-            }
+            PlayStalactiteSfx();
         }
+    }
+
+    void PlayStalactiteSfx()
+    {
+        if (shouldPlay1 == true)
+        {
+            sfxStalactites1.Play();
+        }
+        else
+        {
+            sfxStalactites2.Play();
+        }
+
+        shouldPlay1 = !shouldPlay1;
     }
 
 }

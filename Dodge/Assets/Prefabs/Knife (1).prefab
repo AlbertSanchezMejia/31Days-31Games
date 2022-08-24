@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8799314935403510131}
   m_Layer: 6
   m_Name: Body
-  m_TagString: Knife
+  m_TagString: Stalactites
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
