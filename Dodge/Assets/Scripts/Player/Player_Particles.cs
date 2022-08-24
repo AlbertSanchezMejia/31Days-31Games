@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Particles_Emission : MonoBehaviour
+public class Player_Particles : MonoBehaviour
 {
     [SerializeField] ParticleSystem particlesLeft;
     ParticleSystem.EmissionModule emissionLeft;
@@ -18,10 +18,14 @@ public class Particles_Emission : MonoBehaviour
 
     void Update()
     {
-        float xMov = Input.GetAxisRaw("Horizontal");
+        float movementDirection = Input.GetAxisRaw("Horizontal");
+        EmitMovementParticles(movementDirection);
+    }
 
-        emissionLeft.rateOverTime = (xMov == -1) ? 35 : 0;
-        emissionRight.rateOverTime = (xMov == 1) ? 35 : 0;
+    void EmitMovementParticles(float direction)
+    {
+        emissionLeft.rateOverTime = (direction == -1) ? 35 : 0;
+        emissionRight.rateOverTime = (direction == 1) ? 35 : 0;
     }
 
 }

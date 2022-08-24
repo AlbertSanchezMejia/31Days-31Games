@@ -712,12 +712,12 @@ MonoBehaviour:
   - "\xBFEsto es...?"
   - "\xA1La cueva se derrumba!"
   - "\xBFFueron mis gritos?"
+  - "El techo se caer\xE1 pronto."
+  - Tengo que moverme.
   - Pero...
-  - No tengo fuerzas para moverme.
+  - Ya no tengo fuerzas.
   - "Por favor ay\xFAdame."
   - "Quiero volver a ver la luz del d\xEDa."
-  - "Empezar\xE1n a caer estalatitas del techo."
-  - "Ay\xFAdame a esquivarlas."
   countText: 0
 --- !u!1 &206973917
 GameObject:
@@ -1819,7 +1819,8 @@ MonoBehaviour:
   - "\xA1No!"
   - No puedo perder la calma.
   - "La salida est\xE1 cerca."
-  - Estoy seguro. Puedo sentirlo.
+  - Estoy seguro.
+  - Puedo sentirlo.
   countText: 0
 --- !u!4 &851360243
 Transform:
@@ -3106,10 +3107,10 @@ RectTransform:
   m_Father: {fileID: 1288103717}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -419.97327, y: 334.24}
-  m_SizeDelta: {x: 274.6678, y: 51.5212}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150.02673, y: -25.76001}
+  m_SizeDelta: {x: 274.6678, y: 51.521194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684969262
 MonoBehaviour:

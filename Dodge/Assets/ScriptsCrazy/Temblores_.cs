@@ -41,8 +41,10 @@ public class Temblores_ : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ShakeCave();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         enemies.SetActive(true);
+
+        yield return new WaitForSeconds(0.6f);
         secondText.SetActive(true);
 
         InvokeRepeating(nameof(ShakeCave), 2.5f, 2.5f);

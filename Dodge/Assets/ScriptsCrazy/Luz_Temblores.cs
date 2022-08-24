@@ -42,13 +42,15 @@ public class Luz_Temblores : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         shaker.shakeDistance = 0.4f;
+        shaker.shakeTime = 1.25f;
         shaker.StartShake();
         caveShake.Play();
 
         yield return new WaitForSeconds(1f);
         texto.text = "¿Otro Derrumbe?";
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.25f);
+        texto.text = "! ! !";
         shaker.shakeTime = 1.8f;
         shaker.shakeDistance = 0.6f;
         shaker.StartShake();

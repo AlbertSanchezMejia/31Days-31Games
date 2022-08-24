@@ -9,7 +9,13 @@ public class Player_Collisions : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Knife"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ResetCurrentScene();
         }
     }
+
+    void ResetCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

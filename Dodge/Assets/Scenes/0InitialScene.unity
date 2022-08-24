@@ -328,7 +328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Para avanzar los textos o moverte, usa las flechas del teclado o las teclas
+  m_Text: Para avanzar los textos o moverte usa las flechas del teclado o las teclas
     a y d.
 --- !u!222 &481480762
 CanvasRenderer:
@@ -1046,7 +1046,7 @@ MonoBehaviour:
   arrowImage: {fileID: 42840093}
   delayText: 0.09
   sentences:
-  - Para avanzar los textos o moverte, usa las flechas del teclado o las teclas a
+  - Para avanzar los textos o moverte usa las flechas del teclado o las teclas a
     y d.
   - Buena suerte.
   countText: 0
